@@ -12,8 +12,6 @@ class GameController:
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption("Balthazar's Temple")
-        self.clock = pygame.time.Clock()
-        pygame.key.set_repeat(500, 100)
         self.player = None
         self.states = {
             "MENU": self.menu,
@@ -25,7 +23,6 @@ class GameController:
     def run(self):
         self.playing = True
         while self.playing:
-            self.dt = self.clock.tick(FPS) / 1000
             self.states[self.current_state]()
 
     def menu(self):

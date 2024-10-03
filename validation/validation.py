@@ -14,6 +14,7 @@ def validate_entities(map_data, game):
                 case 'P':
                     if player_count < 1:
                         player = Player(x, y, 100, game)
+                        map_data[y] = map_data[y][:x] + '0' + map_data[y][x+1:]
                         player_count += 1
                     else:
                         break
